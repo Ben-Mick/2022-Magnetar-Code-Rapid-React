@@ -3,18 +3,19 @@ package frc.robot.commands.CatapultCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Catapult;
-import frc.robot.tools.PneumaticsControls;
+import frc.robot.subsystems.Intake;
 
 public class PrepCatapult extends CommandBase {
 
-  public PrepCatapult(Catapult shoot) {
+  public PrepCatapult(Catapult shoot, Intake intake) {
 addRequirements(shoot);
+addRequirements(intake);
   }
 
   @Override
   public void initialize() {
-    PneumaticsControls.setIntakeDown();
-   PneumaticsControls.catapultUp();
+    Intake.setIntakeDown();
+   Catapult.catapultUp();
   }
 
   @Override

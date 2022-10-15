@@ -1,17 +1,39 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.tools.PneumaticsControls;
 
 public class Catapult extends SubsystemBase {
+
+  private final static DoubleSolenoid lockSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 4, 3);//catapult
+  private final static DoubleSolenoid catapultSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 1);//catapult
+
+
+  public static void catapultUp() {//catapult
+      catapultSolenoid.set(Value.kReverse);
+    }
+    
+    public static void doLock() {//catapult
+      lockSolenoid.set(Value.kReverse);
+    }
+    
+    public static void unLock() {//catapult
+      lockSolenoid.set(Value.kForward);
+    }
+    
+    public static void catapultDown() {//catapult
+      catapultSolenoid.set(Value.kForward);
+    }
 
   public Catapult() {
 
   }
 
   public void init() {
-    PneumaticsControls.catapultDown();
-    PneumaticsControls.doLock();
+    catapultDown();
+    doLock();
   }
   
   @Override

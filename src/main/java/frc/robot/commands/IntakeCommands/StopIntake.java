@@ -3,8 +3,6 @@ package frc.robot.commands.IntakeCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
-import frc.robot.tools.MotorControls;
-import frc.robot.tools.PneumaticsControls;
 
 public class StopIntake extends CommandBase {
 Intake intake = new Intake();
@@ -15,7 +13,7 @@ addRequirements(intake);
 
   @Override
   public void initialize() {
-    MotorControls.stopIntake();
+    Intake.stopIntake();
   }
 
   @Override

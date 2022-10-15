@@ -2,19 +2,20 @@ package frc.robot.commands.CatapultCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Catapult;
-import frc.robot.tools.PneumaticsControls;
+import frc.robot.subsystems.Intake;
 
 public class ResetCatapult extends CommandBase {
 
-  public ResetCatapult(Catapult shoot) {
+  public ResetCatapult(Catapult shoot, Intake intake) {
 addRequirements(shoot);
+addRequirements(intake);
   }
 
   @Override
   public void initialize() {
-    PneumaticsControls.doLock();
-    PneumaticsControls.setIntakeUp();
-    // PneumaticsControls.catapultDown();
+    Catapult.doLock();
+    Intake.setIntakeUp();
+    // Catapult.catapultDown();
   }
 
   @Override

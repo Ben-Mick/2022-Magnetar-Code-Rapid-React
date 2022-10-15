@@ -79,7 +79,7 @@ catapult.init();
     OI.driveMenu.whenPressed(new ResetRobot());
   OI.driverY.whenPressed(new TailUp(tail));
   OI.driverA.whenPressed(new TailDown(tail));
-  OI.driverX.whenPressed(new ShootCatapult());
+  OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
   OI.driverB.whenPressed(new ShiftToggle(shift));
   OI.driverLB.whenPressed(new ShiftLow(shift));
   OI.driverRB.whenPressed(new ShiftHigh(shift));

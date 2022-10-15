@@ -4,7 +4,6 @@ package frc.robot.commands.ShiftCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shift;
-import frc.robot.tools.PneumaticsControls;
 
 public class ShiftLow extends CommandBase {
   Shift shift;
@@ -15,7 +14,7 @@ addRequirements(this.shift);
 
   @Override
   public void initialize() {
-    PneumaticsControls.shifterLow();
+    Shift.shifterLow();
   }
 
   @Override

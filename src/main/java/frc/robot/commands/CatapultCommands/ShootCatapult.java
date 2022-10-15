@@ -4,21 +4,22 @@ package frc.robot.commands.CatapultCommands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.subsystems.Catapult;
+import frc.robot.subsystems.Intake;
 
 public class ShootCatapult extends SequentialCommandGroup {
 
-  public ShootCatapult() {
+  public ShootCatapult(Intake intake, Catapult shoot) {
 
-Catapult shoot = new Catapult();
+    addRequirements(intake, shoot);
 
     addCommands(
-new PrepCatapult(shoot),
+new PrepCatapult(shoot, intake),
 new WaitCommand(1.75),
 new ReleaseCatapult(shoot),
 new WaitCommand(1.5),
 new CatapultDown(shoot),
 new WaitCommand(1),
-new ResetCatapult(shoot),
+new ResetCatapult(shoot, intake),
 new WaitCommand(1),
 new CatapultUp(shoot)
     );
