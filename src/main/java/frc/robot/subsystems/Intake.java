@@ -49,7 +49,6 @@ public class Intake extends SubsystemBase {
 
 
 public void init() {
-  setIntakePercent(0.0);
   setDefaultCommand(new IntakeDefault(this));
 }
 

@@ -29,7 +29,6 @@ public class Tail extends SubsystemBase {
   }
 
 public void init() {
-  setTailPercent(0.0);
   setDefaultCommand(new TailDefault(this));
 }
 

@@ -24,14 +24,12 @@ public class Shift extends SubsystemBase {
   }
   
   public static void toggleShifter() {//shift
-    System.out.println("it work seruiwfjdbyuhtidvjnhn");
     shiftersSolenoid.toggle();
   }
 
 public boolean isGearLow = true;
 
 public void init() {
-  shifterLow();
   setDefaultCommand(new ShiftDefault(this));
 }
 

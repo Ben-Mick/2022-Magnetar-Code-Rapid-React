@@ -14,7 +14,7 @@ public class ShootCatapult extends SequentialCommandGroup {
 
     addCommands(
 new PrepCatapult(shoot, intake),
-new WaitCommand(1.75),
+new WaitCommand(2.5),
 new ReleaseCatapult(shoot),
 new WaitCommand(1.5),
 new CatapultDown(shoot),

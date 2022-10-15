@@ -14,7 +14,8 @@ public class CatapaltDefault extends CommandBase {
 
   @Override
   public void initialize() {
-    Catapult.catapultUp();
+    Catapult.catapultDown();
+    Catapult.doLock();
   }
 
   @Override

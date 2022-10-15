@@ -17,7 +17,7 @@ public class TailUp extends CommandBase {
   }
 
   @Override
-  public void execute() {System.out.println(tail.getTailCurrent());}
+  public void execute() {}
 
   @Override
   public void end(boolean interrupted) {

@@ -12,7 +12,9 @@ public class TailDefault extends CommandBase {
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    Tail.tailStop();
+  }
 
   @Override
   public void execute() {}

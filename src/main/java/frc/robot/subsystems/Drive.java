@@ -33,8 +33,6 @@ public static void stopDrive() {//drive
 
 
 public void init() {
-  setUpDriveMotors();
-  setDrivePercents(0.0, 0.0);
   setDefaultCommand(new DriveDefault(this));
 }
 

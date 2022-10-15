@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.commands.Defaults.CatapaltDefault;
 
 public class Catapult extends SubsystemBase {
 
@@ -32,8 +33,7 @@ public class Catapult extends SubsystemBase {
   }
 
   public void init() {
-    catapultDown();
-    doLock();
+    setDefaultCommand(new CatapaltDefault(this));
   }
   
   @Override

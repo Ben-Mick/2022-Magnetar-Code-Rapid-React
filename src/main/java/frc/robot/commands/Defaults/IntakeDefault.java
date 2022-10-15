@@ -15,10 +15,15 @@ public class IntakeDefault extends CommandBase {
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    Intake.setIntakeUp();
+    Intake.stopIntake();
+  }
 
   @Override
   public void execute() {
+    Intake.setIntakeUp();
+    Intake.stopIntake();
   }
 
   @Override

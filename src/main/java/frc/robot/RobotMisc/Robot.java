@@ -44,6 +44,10 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
     m_robotContainer = new RobotContainer();
 
     drive.init();
+    catapult.init();
+    intake.init();
+    tail.init();
+    shift.init();
   }
 
   @Override
@@ -85,8 +89,8 @@ catapult.init();
     drive.init();
     drive.periodic();
     OI.driveMenu.whenPressed(new ResetRobot());
-  OI.driverY.whenPressed(new TailUp(tail));
-  OI.driverA.whenPressed(new TailDown(tail));
+  OI.driverY.whenPressed(new TailDown(tail));
+  OI.driverA.whenPressed(new TailUp(tail));
   OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
   OI.driverB.whenPressed(new ShiftToggle(shift));
   OI.driverLB.whenPressed(new ShiftLow(shift));
