@@ -2,7 +2,6 @@ package frc.robot.commands.CatapultCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Catapult;
-import frc.robot.tools.PneumaticsControls;
 
 public class CatapultUp extends CommandBase {
 
@@ -12,7 +11,7 @@ addRequirements(shoot);
 
   @Override
   public void initialize() {
-    PneumaticsControls.catapultUp();
+    Catapult.catapultUp();
   }
 
   @Override

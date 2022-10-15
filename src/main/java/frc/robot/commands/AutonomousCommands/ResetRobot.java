@@ -2,8 +2,10 @@
 package frc.robot.commands.AutonomousCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.tools.MotorControls;
-import frc.robot.tools.PneumaticsControls;
+import frc.robot.subsystems.Catapult;
+import frc.robot.subsystems.Drive;
+import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Shift;
 
 public class ResetRobot extends CommandBase {
 
@@ -13,11 +15,11 @@ public class ResetRobot extends CommandBase {
 
   @Override
   public void initialize() {
-PneumaticsControls.shifterLow();
-PneumaticsControls.setIntakeUp();
-PneumaticsControls.doLock();
-PneumaticsControls.catapultDown();
-MotorControls.setDrivePercents(0.0, 0.0);
+Shift.shifterLow();
+Intake.setIntakeUp();
+Catapult.doLock();
+Catapult.catapultDown();
+Drive.setDrivePercents(0.0, 0.0);
   }
 
   @Override

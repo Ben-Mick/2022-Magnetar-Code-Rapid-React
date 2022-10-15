@@ -16,11 +16,11 @@ public class Auto2BallGroup extends SequentialCommandGroup {
   public Auto2BallGroup(Drive drive, Catapult catapult, Intake intake, Shift shift) {
     addRequirements(drive, catapult, intake, shift);
     addCommands(
-  new ShootCatapult(),
+  new ShootCatapult(intake, catapult),
   new ParallelRaceGroup(new DriveBackward(drive, 2.5), new DoIntake(intake)),
   new DriveForward(drive, 2.5),
   new StopIntake(intake),
-  new ShootCatapult()
+  new ShootCatapult(intake, catapult)
 // new WaitCommand(2),
 // new DoIntake(intake),
 // new DriveBackward(drive),

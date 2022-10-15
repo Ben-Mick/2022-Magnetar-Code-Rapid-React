@@ -1,7 +1,6 @@
 package frc.robot.commands.Defaults;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Catapult;
-import frc.robot.tools.PneumaticsControls;
 
 public class CatapaltDefault extends CommandBase {
 
@@ -15,7 +14,7 @@ public class CatapaltDefault extends CommandBase {
 
   @Override
   public void initialize() {
-    PneumaticsControls.catapultDown();
+    Catapult.catapultUp();
   }
 
   @Override

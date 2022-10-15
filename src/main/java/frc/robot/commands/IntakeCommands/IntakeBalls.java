@@ -4,8 +4,6 @@ package frc.robot.commands.IntakeCommands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotMisc.OI;
 import frc.robot.subsystems.Intake;
-import frc.robot.tools.MotorControls;
-import frc.robot.tools.PneumaticsControls;
 
 public class IntakeBalls extends CommandBase {
   Intake intake;
@@ -16,8 +14,8 @@ public class IntakeBalls extends CommandBase {
 
   @Override
   public void initialize() {
-    PneumaticsControls.setIntakeDown();
-    MotorControls.doIntake();
+    Intake.setIntakeDown();
+    Intake.doIntake();
   }
 
   @Override
@@ -25,8 +23,8 @@ public class IntakeBalls extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    PneumaticsControls.setIntakeUp();
-    MotorControls.stopIntake();
+    Intake.setIntakeUp();
+    Intake.stopIntake();
   }
 
   @Override

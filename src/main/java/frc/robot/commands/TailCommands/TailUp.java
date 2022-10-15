@@ -3,7 +3,6 @@ package frc.robot.commands.TailCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Tail;
-import frc.robot.tools.MotorControls;
 
 public class TailUp extends CommandBase {
   Tail tail;
@@ -14,7 +13,7 @@ public class TailUp extends CommandBase {
 
   @Override
   public void initialize() {
-    MotorControls.tailUp();
+    Tail.tailUp();
   }
 
   @Override
@@ -22,7 +21,7 @@ public class TailUp extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    MotorControls.tailStop();
+    Tail.tailStop();
   }
 
   @Override
