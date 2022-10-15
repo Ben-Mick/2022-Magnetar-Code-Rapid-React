@@ -17,7 +17,11 @@ public class DriveDefault extends CommandBase {
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    
+    Drive.setUpDriveMotors();
+    Drive.stopDrive();
+  }
 
   @Override
   public void execute() {
