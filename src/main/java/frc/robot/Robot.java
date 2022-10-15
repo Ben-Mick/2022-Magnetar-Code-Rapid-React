@@ -9,7 +9,6 @@ import frc.robot.commands.AutonomousCommands.ResetRobot;
 import frc.robot.commands.CatapultCommands.ShootCatapult;
 import frc.robot.commands.IntakeCommands.IntakeBalls;
 import frc.robot.commands.IntakeCommands.OutakeBalls;
-import frc.robot.commands.IntakeCommands.StopIntake;
 import frc.robot.commands.ShiftCommands.ShiftHigh;
 import frc.robot.commands.ShiftCommands.ShiftLow;
 import frc.robot.commands.ShiftCommands.ShiftToggle;
@@ -22,7 +21,6 @@ import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
 import frc.robot.tools.OI;
 import frc.robot.tools.Sensor;
-import edu.wpi.first.wpilibj.AnalogInput;
 
 public class Robot extends TimedRobot {
   
