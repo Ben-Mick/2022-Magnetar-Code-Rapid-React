@@ -1,5 +1,6 @@
 package frc.robot.tools;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -10,11 +11,14 @@ public class PneumaticsControls {
     private final static DoubleSolenoid lockSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 4, 3);
     private final static DoubleSolenoid catapultSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 1);
     private final static DoubleSolenoid shiftersSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 7, 0);
-
+    public static AnalogInput pressure = new AnalogInput(0);
 public static Value getShift() {
  return shiftersSolenoid.get();
-}
 
+}
+public static double getPressure(){
+  return (5.0550 * Math.pow(pressure.getVoltage(), 3)  - 19.5933 * Math.pow(pressure.getVoltage(), 2) + 70.3363 * pressure.getVoltage() - 18.2925);
+}
 public static void shifterLow() {
   shiftersSolenoid.set(Value.kReverse);
 }

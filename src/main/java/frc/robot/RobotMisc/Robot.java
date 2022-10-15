@@ -1,6 +1,7 @@
 
 package frc.robot.RobotMisc;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.AutonomousCommands.Auto2BallGroup;
@@ -19,6 +20,7 @@ import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
+import frc.robot.tools.PneumaticsControls;
 
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
@@ -43,6 +45,8 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
+    SmartDashboard.putNumber("Compressor PSI", PneumaticsControls.getPressure());
+    SmartDashboard.putBoolean("Can Shoot High?", PneumaticsControls.getPressure() > 60);
   }
 
   @Override
@@ -85,10 +89,14 @@ catapult.init();
   OI.driverRB.whenPressed(new ShiftHigh(shift));
  OI.driverRTrig.whenPressed(new IntakeBalls(intake));
 OI.driverLTrig.whenPressed(new OutakeBalls(intake));
+System.out.println(PneumaticsControls.pressure.getVoltage());
   }
 
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    System.out.println(PneumaticsControls.pressure.getVoltage());
+
+  }
 
   @Override
   public void testInit() {

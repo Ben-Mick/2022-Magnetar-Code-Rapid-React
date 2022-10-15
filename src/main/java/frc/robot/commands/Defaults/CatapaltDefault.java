@@ -15,7 +15,7 @@ public class CatapaltDefault extends CommandBase {
 
   @Override
   public void initialize() {
-    PneumaticsControls.catapultUp();
+    PneumaticsControls.catapultDown();
   }
 
   @Override
