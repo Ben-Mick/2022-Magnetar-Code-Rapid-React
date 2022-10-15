@@ -21,13 +21,11 @@ import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
 import frc.robot.tools.OI;
+import frc.robot.tools.Sensor;
 import edu.wpi.first.wpilibj.AnalogInput;
 
 public class Robot extends TimedRobot {
-  public static AnalogInput pressure = new AnalogInput(0);
-  public static double getPressure(){
-    return (5.0550 * Math.pow(pressure.getVoltage(), 3)  - 19.5933 * Math.pow(pressure.getVoltage(), 2) + 70.3363 * pressure.getVoltage() - 18.2925);
-  }
+  
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
@@ -54,8 +52,8 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
-    SmartDashboard.putNumber("Compressor PSI", getPressure());
-    SmartDashboard.putBoolean("Can Shoot High?", getPressure() > 60);
+    SmartDashboard.putNumber("Compressor PSI", Sensor.getPressure());
+    SmartDashboard.putBoolean("Can Shoot High?", Sensor.getPressure() > 60);
   }
 
   @Override
