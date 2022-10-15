@@ -1,5 +1,5 @@
 
-package frc.robot.RobotMisc;
+package frc.robot.tools;
 
 public final class Constants {
 

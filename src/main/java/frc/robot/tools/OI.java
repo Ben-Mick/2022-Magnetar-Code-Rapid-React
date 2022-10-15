@@ -1,7 +1,6 @@
-package frc.robot.RobotMisc;
+package frc.robot.tools;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import frc.robot.tools.TriggerButton;
 
 public class OI {
 

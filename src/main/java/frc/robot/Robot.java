@@ -1,5 +1,5 @@
 
-package frc.robot.RobotMisc;
+package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -20,6 +20,7 @@ import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
+import frc.robot.tools.OI;
 import edu.wpi.first.wpilibj.AnalogInput;
 
 public class Robot extends TimedRobot {

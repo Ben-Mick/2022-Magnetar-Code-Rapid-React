@@ -33,7 +33,11 @@ public static void stopDrive() {//drive
 
 
 public void init() {
+      
+  Drive.setUpDriveMotors();
+  Drive.stopDrive();
   setDefaultCommand(new DriveDefault(this));
+  
 }
 
   @Override

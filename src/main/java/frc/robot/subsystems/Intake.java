@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.RobotMisc.Constants;
-import frc.robot.RobotMisc.OI;
 import frc.robot.commands.Defaults.IntakeDefault;
+import frc.robot.tools.Constants;
+import frc.robot.tools.OI;
 
 public class Intake extends SubsystemBase {
   

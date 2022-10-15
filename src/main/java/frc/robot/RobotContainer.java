@@ -1,5 +1,5 @@
 
-package frc.robot.RobotMisc;
+package frc.robot;
 
 import frc.robot.commands.Defaults.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;

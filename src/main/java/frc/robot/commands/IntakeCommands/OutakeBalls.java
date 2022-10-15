@@ -2,8 +2,8 @@
 package frc.robot.commands.IntakeCommands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotMisc.OI;
 import frc.robot.subsystems.Intake;
+import frc.robot.tools.OI;
 
 public class OutakeBalls extends CommandBase {
   Intake intake;

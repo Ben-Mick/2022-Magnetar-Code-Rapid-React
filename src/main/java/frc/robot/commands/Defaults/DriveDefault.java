@@ -2,8 +2,8 @@
 package frc.robot.commands.Defaults;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotMisc.OI;
 import frc.robot.subsystems.Drive;
+import frc.robot.tools.OI;
 public class DriveDefault extends CommandBase {
 
   private static Drive drive;
@@ -18,9 +18,7 @@ public class DriveDefault extends CommandBase {
 
   @Override
   public void initialize() {
-    
-    Drive.setUpDriveMotors();
-    Drive.stopDrive();
+
   }
 
   @Override
