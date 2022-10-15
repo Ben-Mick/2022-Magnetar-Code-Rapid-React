@@ -82,20 +82,16 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-   // new ResetRobot();
-   new StopIntake(intake);
-catapult.init();
-    drive.init();
-    drive.periodic();
+
     OI.driveMenu.whenPressed(new ResetRobot());
-  OI.driverY.whenPressed(new TailDown(tail));
-  OI.driverA.whenPressed(new TailUp(tail));
-  OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
-  OI.driverB.whenPressed(new ShiftToggle(shift));
-  OI.driverLB.whenPressed(new ShiftLow(shift));
-  OI.driverRB.whenPressed(new ShiftHigh(shift));
- OI.driverRTrig.whenPressed(new IntakeBalls(intake));
-OI.driverLTrig.whenPressed(new OutakeBalls(intake));
+    OI.driverY.whenPressed(new TailDown(tail));
+    OI.driverA.whenPressed(new TailUp(tail));
+    OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
+    OI.driverB.whenPressed(new ShiftToggle(shift));
+    OI.driverLB.whenPressed(new ShiftLow(shift));
+    OI.driverRB.whenPressed(new ShiftHigh(shift));
+    OI.driverRTrig.whenPressed(new IntakeBalls(intake));
+    OI.driverLTrig.whenPressed(new OutakeBalls(intake));
   }
 
   @Override

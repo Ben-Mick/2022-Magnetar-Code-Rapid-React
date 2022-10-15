@@ -34,14 +34,14 @@ public static void stopDrive() {//drive
 
 public void init() {
       
-  Drive.setUpDriveMotors();
-  Drive.stopDrive();
+  setUpDriveMotors();
+  stopDrive();
   setDefaultCommand(new DriveDefault(this));
   
 }
 
-  @Override
-  public void periodic() {}
+@Override
+public void periodic() {}
 
 public void tankDrive(double left, double right) {
   left *= Math.abs(left);
@@ -58,13 +58,13 @@ public void arcadeDrive(double throttle, double turn) {
   double left = throttle + turn;
   double factor;
 
-if(right > 1) {
-  factor = right;
-} else if(left > 1) {
-  factor = left;
-} else {
-	factor = 1;
-}
+  if(right > 1) {
+    factor = right;
+  } else if(left > 1) {
+    factor = left;
+  } else {
+    factor = 1;
+  }
 
   right = right / factor;
   left = left / factor;
