@@ -8,7 +8,6 @@ import frc.robot.commands.AutonomousCommands.Auto2BallGroup;
 import frc.robot.commands.CatapultCommands.ShootCatapult;
 import frc.robot.commands.IntakeCommands.IntakeBalls;
 import frc.robot.commands.IntakeCommands.OutakeBalls;
-import frc.robot.commands.IntakeCommands.StopIntake;
 import frc.robot.commands.ShiftCommands.ShiftHigh;
 import frc.robot.commands.ShiftCommands.ShiftLow;
 import frc.robot.commands.ShiftCommands.ShiftToggle;
@@ -21,7 +20,6 @@ import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
 import frc.robot.tools.OI;
 import frc.robot.tools.Sensor;
-
 
 public class Robot extends TimedRobot {
   
@@ -51,8 +49,8 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
-    SmartDashboard.putNumber("Compressor PSI", Sensor.getPressure());
-    SmartDashboard.putBoolean("Can Shoot High?", Sensor.getPressure() > 60);
+    SmartDashboard.putNumber("Compressor PSI", Math.round(Sensor.getPressure()));
+    SmartDashboard.putBoolean("Can Shoot High?", Math.round(Sensor.getPressure()) > 60);
   }
 
   @Override
@@ -81,19 +79,15 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-   // new ResetRobot();
-   new StopIntake(intake);
-catapult.init();
-    drive.init(drive);
-    drive.periodic();
-  OI.driverY.whenPressed(new TailDown(tail));
-  OI.driverA.whenPressed(new TailUp(tail));
-  OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
-  OI.driverB.whenPressed(new ShiftToggle(shift));
-  OI.driverLB.whenPressed(new ShiftLow(shift));
-  OI.driverRB.whenPressed(new ShiftHigh(shift));
- OI.driverRTrig.whenPressed(new IntakeBalls(intake));
-OI.driverLTrig.whenPressed(new OutakeBalls(intake));
+
+    OI.driverY.whenPressed(new TailDown(tail));
+    OI.driverA.whenPressed(new TailUp(tail));
+    OI.driverX.whenPressed(new ShootCatapult(intake, catapult));
+    OI.driverB.whenPressed(new ShiftToggle(shift));
+    OI.driverLB.whenPressed(new ShiftLow(shift));
+    OI.driverRB.whenPressed(new ShiftHigh(shift));
+    OI.driverRTrig.whenPressed(new IntakeBalls(intake));
+    OI.driverLTrig.whenPressed(new OutakeBalls(intake));
   }
 
   @Override
