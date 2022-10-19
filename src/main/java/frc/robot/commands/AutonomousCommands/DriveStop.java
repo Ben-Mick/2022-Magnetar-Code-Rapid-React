@@ -16,7 +16,7 @@ addRequirements(drive);
   @Override
   public void initialize() {
     initTime = Timer.getFPGATimestamp();
-    Drive.stopDrive();
+    drive.stopDrive();
   }
 
   @Override

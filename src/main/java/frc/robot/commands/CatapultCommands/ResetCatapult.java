@@ -5,16 +5,19 @@ import frc.robot.subsystems.Catapult;
 import frc.robot.subsystems.Intake;
 
 public class ResetCatapult extends CommandBase {
-
+  Catapult shoot = new Catapult();
+  Intake intake = new Intake();
   public ResetCatapult(Catapult shoot, Intake intake) {
+    this.shoot = shoot;
+    this.intake = intake;
 addRequirements(shoot);
 addRequirements(intake);
   }
 
   @Override
   public void initialize() {
-    Catapult.doLock();
-    Intake.setIntakeUp();
+    shoot.doLock();
+    intake.setIntakeUp();
     // Catapult.catapultDown();
   }
 

@@ -13,7 +13,7 @@ addRequirements(intake);
 
   @Override
   public void initialize() {
-    Intake.stopIntake();
+    intake.stopIntake();
   }
 
   @Override

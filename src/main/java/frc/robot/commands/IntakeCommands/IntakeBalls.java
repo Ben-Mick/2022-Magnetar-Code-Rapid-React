@@ -14,8 +14,8 @@ public class IntakeBalls extends CommandBase {
 
   @Override
   public void initialize() {
-    Intake.setIntakeDown();
-    Intake.doIntake();
+    intake.setIntakeDown();
+    intake.doIntake();
   }
 
   @Override
@@ -23,8 +23,8 @@ public class IntakeBalls extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    Intake.setIntakeUp();
-    Intake.stopIntake();
+    intake.setIntakeUp();
+    intake.stopIntake();
   }
 
   @Override

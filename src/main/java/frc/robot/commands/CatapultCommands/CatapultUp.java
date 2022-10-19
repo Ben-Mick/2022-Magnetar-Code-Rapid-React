@@ -4,14 +4,15 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Catapult;
 
 public class CatapultUp extends CommandBase {
-
+  Catapult shoot = new Catapult();
   public CatapultUp(Catapult shoot) {
+    this.shoot = shoot;
 addRequirements(shoot);
   }
 
   @Override
   public void initialize() {
-    Catapult.catapultUp();
+    shoot.catapultUp();
   }
 
   @Override

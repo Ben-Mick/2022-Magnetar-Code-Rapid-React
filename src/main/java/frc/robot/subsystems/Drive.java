@@ -14,28 +14,28 @@ public class Drive extends SubsystemBase {
   public final static TalonSRX backRight = new TalonSRX(4);//drive
   public final static TalonSRX backLeft = new TalonSRX(2);//drive
 
-  public static void setUpDriveMotors() {//drive
+  public  void setUpDriveMotors() {//drive
     frontRight.setInverted(true);
     backRight.setInverted(true);
     backLeft.set(ControlMode.Follower, 1);
     backRight.set(ControlMode.Follower, 3);
   }
 
-  public static void setDrivePercents(double left, double right) {//drive
+  public void setDrivePercents(double left, double right) {//drive
     frontRight.set(ControlMode.PercentOutput, right);
     frontLeft.set(ControlMode.PercentOutput, left);
   }
 
-public static void stopDrive() {//drive
+public void stopDrive() {//drive
   setDrivePercents(0.0, 0.0);
 }
 
 
 
-public void init() {
+public void init(Drive drive) {
       
-  Drive.setUpDriveMotors();
-  Drive.stopDrive();
+  drive.setUpDriveMotors();
+  drive.stopDrive();
   setDefaultCommand(new DriveDefault(this));
   
 }

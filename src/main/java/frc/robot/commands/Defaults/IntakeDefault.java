@@ -4,26 +4,24 @@ import frc.robot.subsystems.Intake;
 
 public class IntakeDefault extends CommandBase {
 
-  private static Intake intake;
+  private  Intake intake = new Intake();
 
 
   public IntakeDefault(Intake intake) {
 
-    IntakeDefault.intake = intake;
-    addRequirements(IntakeDefault.intake);
+    this.intake = intake;
+    addRequirements(intake);
     
   }
 
   @Override
   public void initialize() {
-    Intake.setIntakeUp();
-    Intake.stopIntake();
+    intake.setIntakeUp();
+    intake.stopIntake();
   }
 
   @Override
   public void execute() {
-    Intake.setIntakeUp();
-    Intake.stopIntake();
   }
 
   @Override

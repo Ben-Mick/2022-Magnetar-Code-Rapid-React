@@ -5,26 +5,26 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.commands.Defaults.TailDefault;
-import frc.robot.tools.Constants;
+
 
 public class Tail extends SubsystemBase {
 
   public final static TalonSRX tailMotor = new TalonSRX(6);//tail
 
-  public static void setTailPercent(double power) {//tail
+  public void setTailPercent(double power) {//tail
     tailMotor.set(ControlMode.PercentOutput, power);
   }
 
 
-  public static void tailDown() {//tail
-    setTailPercent(Constants.tailDownSpeed);
+  public void tailDown() {//tail
+    setTailPercent(-0.5);
   }
 
-  public static void tailUp() {//tail
-    setTailPercent(Constants.tailUpSpeed);
+  public void tailUp() {//tail
+    setTailPercent(-0.5);
   }
 
-  public static void tailStop() {//tail
+  public void tailStop() {//tail
     setTailPercent(0.0);
   }
 

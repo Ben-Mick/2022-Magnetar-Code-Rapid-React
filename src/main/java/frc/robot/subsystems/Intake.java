@@ -8,42 +8,42 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.commands.Defaults.IntakeDefault;
-import frc.robot.tools.Constants;
+
 import frc.robot.tools.OI;
 
 public class Intake extends SubsystemBase {
   
 
   private final static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 5, 2);//intake
+  private final static TalonSRX IntakeMotor = new TalonSRX(5);//intake 
 
 
-  public static void setIntakeUp() {//intake
+  public void setIntakeUp() {//intake
       intakeSolenoid.set(Value.kReverse);
   }
 
-  public static void setIntakeDown() {//intake
+  public void setIntakeDown() {//intake
       intakeSolenoid.set(Value.kForward);
   }
 
-  public static void startCompressor() {
+  public void startCompressor() {
     Intake.intakeSolenoid.get();
   }
 
-  private final static TalonSRX IntakeMotor = new TalonSRX(5);//intake 
-
-  public static void setIntakePercent(double power) {//intake
+  
+  public void setIntakePercent(double power) {//intake
     IntakeMotor.set(ControlMode.PercentOutput, power);
   }
        
-  public static void doIntake() {//intake
-    setIntakePercent(Constants.intakeSpeed);
+  public void doIntake() {//intake
+    setIntakePercent(1.0);
   }
        
-  public static void doOutake() {//intake
-    setIntakePercent(Constants.outakeSpeed);
+  public void doOutake() {//intake
+    setIntakePercent(-1.0);
   }
        
-  public static void stopIntake() {//intake
+  public void stopIntake() {//intake
     setIntakePercent(0.0);
   }
 

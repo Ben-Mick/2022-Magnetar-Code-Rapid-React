@@ -14,8 +14,8 @@ addRequirements(intake);
 
   @Override
   public void initialize() {
-    Intake.setIntakeDown();
-    Intake.doIntake();
+    intake.setIntakeDown();
+    intake.doIntake();
   }
 
   @Override

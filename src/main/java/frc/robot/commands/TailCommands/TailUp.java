@@ -13,7 +13,7 @@ public class TailUp extends CommandBase {
 
   @Override
   public void initialize() {
-    Tail.tailUp();
+    tail.tailUp();
   }
 
   @Override
@@ -21,7 +21,7 @@ public class TailUp extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    Tail.tailStop();
+    tail.tailStop();
   }
 
   @Override

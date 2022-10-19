@@ -14,7 +14,7 @@ public class OutakeBalls extends CommandBase {
 
   @Override
   public void initialize() {
-    Intake.doOutake();
+    intake.doOutake();
   }
 
   @Override
@@ -22,7 +22,7 @@ public class OutakeBalls extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    Intake.stopIntake();
+    intake.stopIntake();
   }
 
   @Override

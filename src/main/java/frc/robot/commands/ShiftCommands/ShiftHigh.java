@@ -14,7 +14,7 @@ addRequirements(this.shift);
 
   @Override
   public void initialize() {
-    Shift.shifterHigh();
+    shift.shifterHigh();
   }
 
   @Override

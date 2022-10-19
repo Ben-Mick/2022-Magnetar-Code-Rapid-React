@@ -6,16 +6,19 @@ import frc.robot.subsystems.Catapult;
 import frc.robot.subsystems.Intake;
 
 public class PrepCatapult extends CommandBase {
-
+  Catapult shoot = new Catapult();
+  Intake intake = new Intake();
   public PrepCatapult(Catapult shoot, Intake intake) {
-addRequirements(shoot);
-addRequirements(intake);
+    this.shoot = shoot;
+    this.intake = intake;
+    addRequirements(shoot);
+    addRequirements(intake);
   }
 
   @Override
   public void initialize() {
-    Intake.setIntakeDown();
-   Catapult.catapultUp();
+    intake.setIntakeDown();
+    shoot.catapultUp();
   }
 
   @Override

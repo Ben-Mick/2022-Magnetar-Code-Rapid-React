@@ -16,7 +16,7 @@ double initTime = 0;
   @Override
   public void initialize() {
     initTime = Timer.getFPGATimestamp();
-    Drive.setDrivePercents(-0.5, -0.5);
+    drive.setDrivePercents(-0.5, -0.5);
   }
 
   @Override
@@ -24,7 +24,7 @@ double initTime = 0;
 
   @Override
   public void end(boolean interrupted) {
-    Drive.stopDrive();
+    drive.stopDrive();
   }
 
   @Override

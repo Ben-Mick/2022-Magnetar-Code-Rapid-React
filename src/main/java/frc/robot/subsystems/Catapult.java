@@ -12,19 +12,19 @@ public class Catapult extends SubsystemBase {
   private final static DoubleSolenoid catapultSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 1);//catapult
 
 
-  public static void catapultUp() {//catapult
+  public void catapultUp() {//catapult
       catapultSolenoid.set(Value.kReverse);
     }
     
-    public static void doLock() {//catapult
+    public void doLock() {//catapult
       lockSolenoid.set(Value.kReverse);
     }
     
-    public static void unLock() {//catapult
+    public void unLock() {//catapult
       lockSolenoid.set(Value.kForward);
     }
     
-    public static void catapultDown() {//catapult
+    public void catapultDown() {//catapult
       catapultSolenoid.set(Value.kForward);
     }
 

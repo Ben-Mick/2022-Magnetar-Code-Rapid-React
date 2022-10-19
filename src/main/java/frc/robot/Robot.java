@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.AutonomousCommands.Auto2BallGroup;
-import frc.robot.commands.AutonomousCommands.ResetRobot;
 import frc.robot.commands.CatapultCommands.ShootCatapult;
 import frc.robot.commands.IntakeCommands.IntakeBalls;
 import frc.robot.commands.IntakeCommands.OutakeBalls;
@@ -22,7 +21,7 @@ import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Tail;
 import frc.robot.tools.OI;
 import frc.robot.tools.Sensor;
-import edu.wpi.first.wpilibj.AnalogInput;
+
 
 public class Robot extends TimedRobot {
   
@@ -42,7 +41,7 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
   public void robotInit() {
     m_robotContainer = new RobotContainer();
 
-    drive.init();
+    drive.init(drive);
     catapult.init();
     intake.init();
     tail.init();
@@ -85,9 +84,8 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
    // new ResetRobot();
    new StopIntake(intake);
 catapult.init();
-    drive.init();
+    drive.init(drive);
     drive.periodic();
-    OI.driveMenu.whenPressed(new ResetRobot());
   OI.driverY.whenPressed(new TailDown(tail));
   OI.driverA.whenPressed(new TailUp(tail));
   OI.driverX.whenPressed(new ShootCatapult(intake, catapult));

@@ -15,7 +15,7 @@ private static Shift shift;
 
   @Override
   public void initialize() {
-  Shift.shifterLow();
+  
   }
 
   @Override

@@ -11,29 +11,30 @@ public class Shift extends SubsystemBase {
 
   private final static DoubleSolenoid shiftersSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 7, 0);//shift
 
-  public static Value getShift() {//shift
+  public Value getShift() {//shift
    return shiftersSolenoid.get();
   }
   
-  public static void shifterLow() {//shift
+  public  void shifterLow() {//shift
     shiftersSolenoid.set(Value.kReverse);
   }
   
-  public static void shifterHigh() {//shift
+  public  void shifterHigh() {//shift
     shiftersSolenoid.set(Value.kForward);
   }
   
-  public static void toggleShifter() {//shift
+  public  void toggleShifter() {//shift
     shiftersSolenoid.toggle();
   }
 
 public boolean isGearLow = true;
 
 public void init() {
+  shifterLow();
   setDefaultCommand(new ShiftDefault(this));
 }
 
-public static void shiftToggle() {
+public void shiftToggle() {
   if(getShift() == Value.kReverse) {
     shifterHigh();
   } else {

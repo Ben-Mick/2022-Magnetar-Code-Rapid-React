@@ -4,18 +4,18 @@ import frc.robot.subsystems.Catapult;
 
 public class CatapaltDefault extends CommandBase {
 
-  private static Catapult catapult;
+  private Catapult catapult;
 
 
   public CatapaltDefault(Catapult catapult) {
-    CatapaltDefault.catapult = catapult;
-    addRequirements(CatapaltDefault.catapult);
+    this.catapult = catapult;
+    addRequirements(this.catapult);
   }
 
   @Override
   public void initialize() {
-    Catapult.catapultDown();
-    Catapult.doLock();
+    catapult.catapultDown();
+    catapult.doLock();
   }
 
   @Override
