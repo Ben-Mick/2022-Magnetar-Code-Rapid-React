@@ -17,7 +17,7 @@ public class Tail extends SubsystemBase {
 
 
   public void tailDown() {//tail
-    setTailPercent(-0.5);
+    setTailPercent(0.5);
   }
 
   public void tailUp() {//tail

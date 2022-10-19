@@ -26,7 +26,7 @@ public class TailUp extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    if(tail.getTailCurrent() > 17 || tail.getTailCurrent() < -17) {
+    if(Math.abs(tail.getTailCurrent()) > 20) {
       return true;
     } else {
       return false;
