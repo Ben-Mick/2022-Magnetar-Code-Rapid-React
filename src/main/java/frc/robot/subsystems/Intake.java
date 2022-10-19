@@ -15,11 +15,7 @@ public class Intake extends SubsystemBase {
   
 
   private final static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 5, 2);//intake
-<<<<<<< HEAD
-  private final static TalonSRX IntakeMotor = new TalonSRX(5);//intake 
-=======
   private final static TalonSRX intakeMotor = new TalonSRX(5);//intake 
->>>>>>> 218b0ae87e685847a4df61e70820baef429f7341
 
 
   public void setIntakeUp() {//intake
@@ -30,23 +26,13 @@ public class Intake extends SubsystemBase {
       intakeSolenoid.set(Value.kForward);
   }
 
-<<<<<<< HEAD
   public void startCompressor() {
     Intake.intakeSolenoid.get();
   }
 
   
   public void setIntakePercent(double power) {//intake
-    IntakeMotor.set(ControlMode.PercentOutput, power);
-=======
-  public static void startCompressor() {
-    intakeSolenoid.get();
-  }
-
-
-  public static void setIntakePercent(double power) {//intake
     intakeMotor.set(ControlMode.PercentOutput, power);
->>>>>>> 218b0ae87e685847a4df61e70820baef429f7341
   }
        
   public void doIntake() {//intake
