@@ -50,8 +50,8 @@ private final Auto2BallGroup twoBallAuto = new Auto2BallGroup(drive, catapult, i
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
-    SmartDashboard.putNumber("Compressor PSI", Sensor.getPressure());
-    SmartDashboard.putBoolean("Can Shoot High?", Sensor.getPressure() > 60);
+    SmartDashboard.putNumber("Compressor PSI", Math.round(Sensor.getPressure()));
+    SmartDashboard.putBoolean("Can Shoot High?", Math.round(Sensor.getPressure()) > 60);
   }
 
   @Override

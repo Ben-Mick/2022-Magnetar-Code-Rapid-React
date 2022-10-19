@@ -30,6 +30,7 @@ public class Shift extends SubsystemBase {
 public boolean isGearLow = true;
 
 public void init() {
+  shifterLow();
   setDefaultCommand(new ShiftDefault(this));
 }
 
